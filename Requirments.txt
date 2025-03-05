@@ -1,0 +1,45 @@
+#To load the dataset from csv file 
+pip install pandas (cmd)
+pip install numpy (cmd)
+
+import pandas as pd (python)
+import numpy as np (python)
+
+#To performe the EDA
+pip install matplotlib 
+pip install seaborn 
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#to perform the Machine Learning Opreations 
+pip install scikit-learn
+
+from sklearn.prepocessing ordinalencoder
+
+#to dump and load the Model
+pip install joblib 
+
+
+#Deployment 
+pip install flask
+
+#mysql Work
+create database Disease;
+
+create table prediction
+    -> (
+    -> id int auto_increment primary key,
+    -> age int not null,
+    -> d int not null,
+    -> f int not null,
+    -> c int not null,
+    -> fa int not null,
+    -> db int not null,
+    -> g int not null,
+    -> bp int not null,
+    -> cl int not null,
+    -> p int not null
+    -> );
+
+    

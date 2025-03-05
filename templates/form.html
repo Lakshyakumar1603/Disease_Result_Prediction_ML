@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightblue; /* Light gray background for the page */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            animation: slideDown 0.8s ease-in-out;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        form {
+            background-color: #e0f2f1; /* Light green background */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-20px);
+            animation: slideUp 0.8s ease-out;
+            margin-top: 30px; /* Adds space between header and form */
+        }
+
+        label {
+            font-size: 1.1em;
+            margin: 10px 0;
+            display: block;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border 0.3s ease, background-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #4CAF50;
+            background-color: #eafaf1;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.2em;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        input[type="submit"]:active {
+            transform: scale(1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            input[type="submit"] {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 10px 0;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            label {
+                font-size: 1em;
+            }
+
+            input[type="submit"] {
+                padding: 10px;
+                font-size: 1em;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(-20px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Disease Prediction</h1>
+    </header>
+    
+    <div class="container">
+        <form action="{ { ' url_for(user_data ) ' } }" method="post">
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Enter Age">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="g">
+                    <option value="">Select</option>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="disease">Disease</label>
+                <select id="disease" name="d">
+                    <option value="">Select</option>
+                    <option value="1">Asthma</option>
+                    <option value="2">Osteoporosis</option>
+                    <option value="3">Stroke</option>
+                    <option value="4">Hypertension</option>
+                    <option value="6">Diabetes</option>
+                    <option value="0">Migraine</option>
+                    <option value="5">Influenza</option>
+                    <option value="7">Pneumonia</option>
+                    <option value="9">Bronchitis</option>
+                    <option value="10">Kidney Cancer</option>
+                    <option value="11">Depression</option>
+                    <option value="8">Liver Cancer</option>
+                    <option value="12">Common Cold</option>
+                    <option value="13">Rheumatoid Arthritis</option>
+                    <option value="14">Gastroenteritis</option>
+                    <option value="15">Anxiety Disorders</option>
+                    <option value="16">Allergic Rhinitis</option>
+                    <option value="17">Eczema</option>
+                    <option value="18">Osteoarthritis</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fever">Fever</label>
+                <select id="fever" name="f">
+                    <option value="">Select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cough">Cough</label>
+                <select id="cough" name="c">
+                    <option value="">Select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fatigue">Fatigue</label>
+                <select id="fatigue" name="fa">
+                    <option value="">Select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty_breathing">Difficulty Breathing</label>
+                <select id="difficulty_breathing" name="db">
+                    <option value="">Select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            
+
+            
+
+            <div class="form-group">
+                <label for="blood_pressure">Blood Pressure</label>
+                <select id="blood_pressure" name="bp">
+                    <option value="">Select</option>
+                    <option value="0">Low</option>
+                    <option value="1">Normal</option>
+                    <option value="2">High</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cholesterol_level">Cholesterol Level</label>
+                <select id="cholesterol_level" name="cl">
+                    <option value="">Select</option>
+                    <option value="0">Low</option>
+                    <option value="1">Normal</option>
+                    <option value="2">High</option>
+                </select>
+            </div>
+
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
